@@ -34,3 +34,18 @@ export interface IBadge {
     value: string;
     onRemove: () => void;
 }
+
+export interface IModal {
+    title: string;
+    content: any;
+    onAccept: () => void;
+    onDecline: () => void;
+    isModalVisible: boolean;
+}
+
+export interface IPopUp {
+    isPopUpVisible: boolean;
+    onAccept: () => void;
+    onDecline: () => void;
+    message: string;
+}

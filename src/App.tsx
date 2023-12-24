@@ -6,6 +6,8 @@ import ErrorMessage from './components/ErrorMessage';
 import {IPokemon} from './interfaces';
 import MySelect from './components/MySelect';
 import Badge from './components/Badge';
+import MyPopUp from './components/MyPopUp';
+import MyModal from './components/MyModal';
 
 function App() {
     const {register, handleSubmit, getValues, formState: { errors, isValid }, reset} = useForm<IFullName>({mode: 'onBlur'});
@@ -18,15 +20,19 @@ function App() {
     const [certainPokemons, setCertainPokemons] = useState<any[]>([]);
 
     const onSubmit: SubmitHandler<IFullName> = async () => {
-        setModalVisible(true);
+        if (selectedPokemons.length === 4){
+            setModalVisible(true);
 
-        const promises = selectedPokemons.map(async (p) => {
-            return await fetchPokemons(p);
-        });
+            const promises = selectedPokemons.map(async (p) => {
+                return await fetchPokemons(p);
+            });
       
-        const results = await Promise.all(promises);
-      
-        setCertainPokemons((state) => [...state, ...results]);
+            const results = await Promise.all(promises);
+        
+            setCertainPokemons((state) => [...state, ...results]);
+        } else {
+            setPopUpVisible(true);
+        }
     }
 
     useEffect(() => {
@@ -55,8 +61,35 @@ function App() {
         setSelectedPokemons(updatedPokemons);
     };
 
+    const onAccept = () => {
+        reset();
+        setSelectedPokemons([]);
+        setModalVisible(false);
+        setCertainPokemons([]);
+    }
+
+    const onDecline = () => {
+        setSelectedPokemons([]);
+        setModalVisible(false);
+        setCertainPokemons([]);
+    }
+
+    const handleDivClick = () => {
+        setSelectVisible(false);
+        setModalVisible(false);
+    }
+
+    const onAcceptPopUp = () => {
+        setPopUpVisible(false);
+        setSelectedPokemons([]);
+    }
+
+    const onDeclinePopUp = () => {
+        setPopUpVisible(false);
+    }
+    
     return (
-        <div>
+        <div onClick={handleDivClick}>
             <h1 className='mb-5 mt-5 text-4xl text-center font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white'><span className='text-yellow-500 dark:text-yellow-300'>Pokemon</span> API</h1>
             <form onSubmit={handleSubmit(onSubmit)} onClick={e => e.stopPropagation()} className='flex flex-col space-y-4 max-w-screen-md mx-auto' autoComplete='off'>
                 <div>
@@ -108,6 +141,19 @@ function App() {
                 </div>
                 <button disabled={!isValid} className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 cursor-pointer'>Send</button>
             </form>
+            <MyModal 
+                title={`${getValues('firstname')} ${getValues('lastname')}'s team`}
+                content={certainPokemons}
+                onAccept={onAccept} 
+                onDecline={onDecline} 
+                isModalVisible={isModalVisible}
+            ></MyModal>
+            <MyPopUp 
+                isPopUpVisible={isPopUpVisible}
+                onAccept={onAcceptPopUp}
+                onDecline={onDeclinePopUp}
+                message='You can select only four pokemons'
+            />
         </div>
     )
 }

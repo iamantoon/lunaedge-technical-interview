@@ -6,3 +6,16 @@ html, body {
     background: rgb(255,203,5);
     background: linear-gradient(90deg, rgba(255,203,5,1) 0%, rgba(251,223,51,1) 22%, rgba(255,255,179,1) 100%);
 }
+
+.capitalize-first::first-letter {
+    text-transform: uppercase;
+}
+
+.scr::-webkit-scrollbar {
+    display: none;
+}
+
+.scr {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+}
