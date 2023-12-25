@@ -24,7 +24,7 @@ const MySelect = ({options, value, handleSelectOption, setFilter, selectedPokemo
                         onChange={(e) => setFilter(e.target.value)}
                         onFocus={() => setSelectVisible(true)}
                         placeholder='Choose your pokemon'
-                        className='bg-transparent outline-none flex-'
+                        className='bg-transparent outline-none block w-full'
                     />
                 </div>
                 {isSelectVisible &&
