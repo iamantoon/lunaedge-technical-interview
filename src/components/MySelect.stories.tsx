@@ -1,31 +1,27 @@
-import MySelect from './MySelect';
+import {Meta, Story} from '@storybook/react';
+import {ISelectProps} from './../interfaces'; 
 import {action} from '@storybook/addon-actions';
-import './../index.css';
+import MySelect from './MySelect';
 
 export default {
-    title: 'Select',
-    component: MySelect,
-    tags: ['autodocs'],
-    argTypes: {
-            isSelectVisible: {
-            type: 'boolean',
-            description: 'Determines if the select is open',
-            defaultValue: false,
-            options: [true, false],
-        },
-            value: {
-            type: 'string',
-            description: 'Used to search among options',
-            defaultValue: '',
-        },
-            options: {
-            type: 'array',
-            description: 'Select options',
-        },
+  title: 'MySelect',
+  component: MySelect,
+  argTypes: {
+    options: {
+      control: { type: 'array' },
     },
-};
+    value: {
+      control: { type: 'text' },
+    },
+    setFilter: { action: 'setFilter' },
+    onChange: { action: 'onChange' },
+    onFocus: { action: 'onFocus' },
+  },
+} as Meta;
 
-const Template = (args) => <MySelect {...args} />;
+type TemplateArgs = ISelectProps;
+
+const Template: Story<TemplateArgs> = (args) => <MySelect {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
@@ -37,6 +33,5 @@ Default.args = {
         { name: 'charmeleon', url: 'https://pokeapi.co/api/v2/pokemon/5/' },
     ],
     setFilter: action('setFilter'),
-    onChange: action('onChange'),
-    onFocus: action('onFocus')
-};``
+    handleSelectOption: action('onChange'),
+};
