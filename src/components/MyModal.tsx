@@ -6,7 +6,7 @@ const Modal = ({title, content, onAccept, onDecline, isModalVisible}: IModal) =>
     if (!isModalVisible) return null;
 
     return (
-        <div className='fixed inset-0'>
+        <div className='fixed inset-0' onClick={e => e.stopPropagation()}>
             <div className='flex items-center justify-center h-full'>
                 <div className='bg-black opacity-50 fixed inset-0' />
                 <div className='relative p-4 w-full max-w-md'>
