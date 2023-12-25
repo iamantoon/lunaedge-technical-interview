@@ -5,10 +5,13 @@ export interface IRemovePokemonProps extends Pick<ISelectProps, 'removePokemon' 
 
 const SelectedOptions = ({selectedPokemons, removePokemon}: IRemovePokemonProps) => {
     return (
-        selectedPokemons.map((pokemon, index) => (
-            <Badge key={pokemon} value={pokemon} onRemove={() => removePokemon(index)} />
-        ))
-    );  
+        <div>
+            {selectedPokemons && selectedPokemons.map((pokemon, index) => (
+                <Badge key={pokemon} value={pokemon} onRemove={() => removePokemon(index)} />
+            ))}
+        </div>
+    );
+    
 }
 
 export default SelectedOptions;
