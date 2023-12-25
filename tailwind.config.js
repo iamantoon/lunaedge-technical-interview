@@ -4,6 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  addons: ['@storybook/addon-actions'],
   theme: {
     extend: {},
   },

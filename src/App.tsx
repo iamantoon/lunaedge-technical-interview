@@ -73,7 +73,7 @@ function App() {
         setCertainPokemons([]);
     }
 
-    const handleDivClick = () => {
+    const closeModal = () => {
         setSelectVisible(false);
         setModalVisible(false);
     }
@@ -88,7 +88,7 @@ function App() {
     }
     
     return (
-        <div onClick={handleDivClick}>
+        <div onClick={closeModal}>
             <h1 className='mb-5 mt-5 text-4xl text-center font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white'><span className='text-yellow-500 dark:text-yellow-300'>Pokemon</span> API</h1>
             <form onSubmit={handleSubmit(onSubmit)} onClick={e => e.stopPropagation()} className='flex flex-col space-y-4 max-w-screen-md mx-auto' autoComplete='off'>
                 <div>
@@ -123,12 +123,11 @@ function App() {
                     <MySelect 
                         options={filteredPokemons}
                         value={filter}
-                        onChange={handleSelectOption}
+                        handleSelectOption={handleSelectOption}
                         setFilter={setFilter}
                         selectedPokemons={selectedPokemons}
                         isSelectVisible={isSelectVisible}
                         setSelectVisible={setSelectVisible}
-                        setModalVisible={setModalVisible}
                         setPopUpVisible={setPopUpVisible}
                         removePokemon={removePokemon}
                     />
@@ -140,7 +139,7 @@ function App() {
                         ? 'bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300'
                         : 'bg-blue-700 cursor-not-allowed'
                     } font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800`}
-                    >
+                >
                     Send
                 </button>
             </form>
@@ -150,7 +149,7 @@ function App() {
                 onAccept={onAccept} 
                 onDecline={onDecline} 
                 isModalVisible={isModalVisible}
-            ></MyModal>
+            />
             <MyPopUp 
                 isPopUpVisible={isPopUpVisible}
                 onAccept={onAcceptPopUp}

@@ -1574,7 +1574,7 @@
   resolved "https://registry.npmjs.org/@sinclair/typebox/-/typebox-0.27.8.tgz"
   integrity sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==
 
-"@storybook/addon-actions@7.6.6":
+"@storybook/addon-actions@^7.6.6", "@storybook/addon-actions@7.6.6":
   version "7.6.6"
   resolved "https://registry.npmjs.org/@storybook/addon-actions/-/addon-actions-7.6.6.tgz"
   integrity sha512-mLJip9Evb2Chj7ymKbpaybe5NgDy3Du7oSWeURPy/0qXJ2cBqHWnhZ8CTK2DasrstsUhQSJaZVXHhaENT+fn+g==

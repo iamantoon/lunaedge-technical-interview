@@ -21,12 +21,11 @@ interface IOption {
 export interface ISelectProps {
     options: IOption[];
     value: string;
-    onChange: (s: string) => void;
+    handleSelectOption: (s: string) => void;
     setFilter: (s: string) => void;
     selectedPokemons: string[];
     isSelectVisible: boolean;
     setSelectVisible: (bool: boolean) => void;
-    setModalVisible: (bool: boolean) => void;
     setPopUpVisible: (bool: boolean) => void;
     removePokemon: (index: number) => void;
 }

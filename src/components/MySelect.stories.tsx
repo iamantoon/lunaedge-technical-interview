@@ -7,20 +7,20 @@ export default {
     component: MySelect,
     tags: ['autodocs'],
     argTypes: {
-        isSelectVisible: {
-        type: 'boolean',
-        description: 'Determines if the select is open',
-        defaultValue: false,
-        options: [true, false],
+            isSelectVisible: {
+            type: 'boolean',
+            description: 'Determines if the select is open',
+            defaultValue: false,
+            options: [true, false],
         },
-        value: {
-        type: 'string',
-        description: 'Used to search among options',
-        defaultValue: '',
+            value: {
+            type: 'string',
+            description: 'Used to search among options',
+            defaultValue: '',
         },
-        options: {
-        type: 'array',
-        description: 'Select options',
+            options: {
+            type: 'array',
+            description: 'Select options',
         },
     },
 };
@@ -38,4 +38,5 @@ Default.args = {
     ],
     setFilter: action('setFilter'),
     onChange: action('onChange'),
-};
+    onFocus: action('onFocus')
+};``
