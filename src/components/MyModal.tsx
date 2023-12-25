@@ -1,3 +1,4 @@
+import Loading from './Loading';
 import {IModal} from './../interfaces';
 
 const Modal = ({title, content, onAccept, onDecline, isModalVisible}: IModal) => {
@@ -20,7 +21,7 @@ const Modal = ({title, content, onAccept, onDecline, isModalVisible}: IModal) =>
                             </button>
                         </div>
                         <div className='p-2 space-y-2 flex flex-col justify-center items-center'>
-                            {content.map((item: any, index: number) => (
+                            {content.length === 0 ? <Loading /> : content.map((item: any, index: number) => (
                                 <div key={index} className='flex items-center space-x-1'>
                                     <img src={item.sprites.front_default} alt={item.name} className='w-17 h-17' />
                                     <p className='text-gray-800 dark:text-white capitalize-first'>{item.name}</p>
