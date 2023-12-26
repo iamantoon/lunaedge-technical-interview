@@ -33,6 +33,7 @@ export interface ISelectProps {
     setSelectVisible: (bool: boolean) => void;
     setPopUpVisible: (bool: boolean) => void;
     removePokemon: (index: number) => void;
+    onFocus?: (bool: boolean) => void
 }
 
 export interface IBadge {
