@@ -21,8 +21,8 @@ interface IOption {
 export interface ISelectProps {
     options: IOption[];
     value: string;
-    labelSize: string;
-    labelWeight: string;
+    fontSize: string;
+    fontWeight: string;
     fieldSize: string;
     placeholder: string;
     width: string;

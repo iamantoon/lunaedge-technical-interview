@@ -16,18 +16,18 @@ export default {
         type: 'string',
         description: 'Set a placeholder'
     },
-    labelSize: {
+    fontSize: {
         type: 'string',
-        description: 'Set font size settings',
+        description: 'Set the font size settings',
         defaultValue: 'text-sm',
         control: {
             type: 'radio'
         },
         options: ['text-xs', 'text-sm', 'text-base', 'text-lg', 'text-xl', 'text-2xl']
     },
-    labelWeight: {
+    fontWeight: {
         type: 'string',
-        description: 'Set font weight settings',
+        description: 'Set the font weight settings',
         defaultValue: 'font-medium',
         control: {
             type: 'radio'
@@ -78,8 +78,8 @@ Default.args = {
         { name: 'charmander', url: 'https://pokeapi.co/api/v2/pokemon/4/' },
         { name: 'charmeleon', url: 'https://pokeapi.co/api/v2/pokemon/5/' },
     ],
-    labelSize: 'text-sm',
-    labelWeight: 'font-medium',
+    fontSize: 'text-sm',
+    fontWeight: 'font-medium',
     fieldSize: '2.5',
     placeholder: 'Type to find',
     width: 'full',
@@ -98,8 +98,8 @@ Large.args = {
         { name: 'charmander', url: 'https://pokeapi.co/api/v2/pokemon/4/' },
         { name: 'charmeleon', url: 'https://pokeapi.co/api/v2/pokemon/5/' },
     ],
-    labelSize: 'text-lg',
-    labelWeight: 'font-semibold',
+    fontSize: 'text-lg',
+    fontWeight: 'font-semibold',
     fieldSize: '3',
     placeholder: 'Type to find',
     width: 'full',
@@ -117,8 +117,8 @@ Medium.args = {
         { name: 'charmander', url: 'https://pokeapi.co/api/v2/pokemon/4/' },
         { name: 'charmeleon', url: 'https://pokeapi.co/api/v2/pokemon/5/' },
     ],
-    labelSize: 'text-base',
-    labelWeight: 'font-normal',
+    fontSize: 'text-base',
+    fontWeight: 'font-normal',
     fieldSize: '2',
     placeholder: 'Type to find',
     width: 'full',
@@ -136,8 +136,8 @@ Small.args = {
         { name: 'charmander', url: 'https://pokeapi.co/api/v2/pokemon/4/' },
         { name: 'charmeleon', url: 'https://pokeapi.co/api/v2/pokemon/5/' },
     ],
-    labelSize: 'text-xs',
-    labelWeight: 'font-light',
+    fontSize: 'text-xs',
+    fontWeight: 'font-light',
     fieldSize: '1.5',
     placeholder: 'Type to find',
     width: 'full',
