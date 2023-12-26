@@ -21,6 +21,11 @@ interface IOption {
 export interface ISelectProps {
     options: IOption[];
     value: string;
+    labelSize: string;
+    labelWeight: string;
+    fieldSize: string;
+    placeholder: string;
+    width: string;
     handleSelectOption: (s: string) => void;
     setFilter: (s: string) => void;
     selectedPokemons: string[];

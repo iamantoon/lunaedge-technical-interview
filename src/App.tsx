@@ -123,6 +123,11 @@ function App() {
                     <MySelect 
                         options={filteredPokemons}
                         value={filter}
+                        labelSize='text-sm'
+                        labelWeight='font-medium'
+                        fieldSize='2.5'
+                        placeholder='Choose your pokemons'
+                        width='full'
                         handleSelectOption={handleSelectOption}
                         setFilter={setFilter}
                         selectedPokemons={selectedPokemons}
