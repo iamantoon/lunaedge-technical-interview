@@ -50,7 +50,7 @@ export default {
         control: {
             type: 'radio'
         },
-        options: ['1', '1.5', '2', '2.5', '3', '3.5']
+        options: ['1', '1.5', '2', '2.5', '3']
     },
     options: {
         control: { type: 'array' },
@@ -59,6 +59,9 @@ export default {
     setFilter: { action: 'setFilter' },
     onChange: { action: 'onChange' },
     onFocus: { action: 'onFocus' },
+    removePokemon: { control: { disable: true } },
+    setPopUpVisible: { control: { disable: true } },
+    selectedPokemons: { control: { disable: true } },
   },
 } as Meta;
 
@@ -97,9 +100,10 @@ Large.args = {
     ],
     labelSize: 'text-lg',
     labelWeight: 'font-semibold',
-    fieldSize: '3.5',
+    fieldSize: '3',
     placeholder: 'Type to find',
     width: 'full',
+    isSelectVisible: true,
     setFilter: action('setFilter'),
     handleSelectOption: action('onChange'),
 }
@@ -118,6 +122,7 @@ Medium.args = {
     fieldSize: '2',
     placeholder: 'Type to find',
     width: '32',
+    isSelectVisible: true,
     setFilter: action('setFilter'),
     handleSelectOption: action('onChange'),
 }
@@ -136,6 +141,7 @@ Small.args = {
     fieldSize: '1.5',
     placeholder: 'Type to find',
     width: '32',
+    isSelectVisible: true,
     setFilter: action('setFilter'),
     handleSelectOption: action('onChange'),
 }
