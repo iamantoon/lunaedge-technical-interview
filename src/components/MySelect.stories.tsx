@@ -32,7 +32,7 @@ export default {
         control: {
             type: 'radio'
         },
-        options: ['font-thin', 'font-light', 'font-normal', 'font-medium', 'font-semibold', 'font-bold', 'font-extrabold']
+        options: ['font-light', 'font-normal', 'font-medium', 'font-bold', 'font-extrabold']
     },
     width: {
         type: 'string',
@@ -41,7 +41,7 @@ export default {
         control: {
             type: 'radio'
         },
-        options: ['full', 'auto', 'screen', '48', '32', '16', '1/2']
+        options: ['full', '16']
     },
     fieldSize: {
         type: 'string',
@@ -121,7 +121,7 @@ Medium.args = {
     labelWeight: 'font-normal',
     fieldSize: '2',
     placeholder: 'Type to find',
-    width: '32',
+    width: 'full',
     isSelectVisible: true,
     setFilter: action('setFilter'),
     handleSelectOption: action('onChange'),
@@ -140,7 +140,7 @@ Small.args = {
     labelWeight: 'font-light',
     fieldSize: '1.5',
     placeholder: 'Type to find',
-    width: '32',
+    width: 'full',
     isSelectVisible: true,
     setFilter: action('setFilter'),
     handleSelectOption: action('onChange'),
