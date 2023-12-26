@@ -89,7 +89,7 @@ function App() {
     
     return (
         <div onClick={closeModal}>
-            <h1 className='mb-5 mt-5 text-4xl text-center font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white'><span className='text-yellow-500 dark:text-yellow-300'>Pokemon</span> API</h1>
+            <h1 className='mb-5 mt-8 text-4xl text-center font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white'><span className='text-yellow-500 dark:text-yellow-300'>Pokemon</span> API</h1>
             <form onSubmit={handleSubmit(onSubmit)} onClick={e => e.stopPropagation()} className='flex flex-col space-y-4 max-w-screen-sm mx-auto' autoComplete='off'>
                 <div>
                     <label className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'>First name</label>

@@ -80,7 +80,7 @@ Default.args = {
     fieldSize: '2.5',
     placeholder: 'Type to find',
     width: 'full',
-    isSelectVisible: false, 
+    isSelectVisible: true, 
     setFilter: action('setFilter'),
     handleSelectOption: action('onChange'),
     setSelectVisible: action('setSelectVisible(true)')
