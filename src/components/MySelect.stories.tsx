@@ -55,12 +55,10 @@ export default {
     options: {
         control: { type: 'array' },
     },
-    isSelectVisible: {
-        control: 'boolean',
-    },
+    isSelectVisible: { control: 'boolean' },
     setFilter: { action: 'setFilter' },
     onChange: { action: 'onChange' },
-    onFocus: { action: 'setSelectVisible(true)' },
+    onFocus: { action: 'onFocus' },
   },
 } as Meta;
 
@@ -82,7 +80,7 @@ Default.args = {
     fieldSize: '2.5',
     placeholder: 'Type to find',
     width: 'full',
-    
+    isSelectVisible: false, 
     setFilter: action('setFilter'),
     handleSelectOption: action('onChange'),
     setSelectVisible: action('setSelectVisible(true)')
